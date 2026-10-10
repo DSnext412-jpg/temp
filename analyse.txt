@@ -1,0 +1,19 @@
+count_shell.c     1,16
+cscan.c           6
+disk_fcfs.c       2
+disk_sstf.c       3,27
+fcfs.c            12
+left_scan.c       4,28
+look.c            10,13, 20
+lru.c             16,20,27
+mfu.c             21,28,30
+nice.c            7,19,21
+nsjf.c            9,13
+optimal.c         9,11
+orphan.c          15,18
+page_fifo.c       5,26
+priority.c        15,19,26
+psjf              18
+rr.c              10,30
+sort.c            12
+vector.c          2,6
