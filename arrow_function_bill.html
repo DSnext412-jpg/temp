@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><body>
+<script>
+let productName = "Laptop";
+let price = 50000;
+let quantity = 2;
+
+let calculateTotal = (price, quantity) => price * quantity;
+
+let total = calculateTotal(price, quantity);
+
+let bill = `
+================================
+          PRODUCT BILL
+================================
+Product Name : ${productName}
+Price        : ₹${price}
+Quantity     : ${quantity}
+--------------------------------
+Total Price  : ₹${total}
+================================
+`;
+
+console.log(bill);
+</script>
+</body>
+</html>

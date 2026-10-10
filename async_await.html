@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function login(username, password) {
+    return new Promise((resolve, reject) => {
+        if (username === "admin1" && password === "1234") {
+            resolve("Login successful!");
+        } else {
+            reject("Invalid username or password.");
+        }
+    });
+}
+
+async function userLogin() {
+    try {
+        const message = await login("admin", "1234");
+        console.log(message);
+    } catch (error) {
+        console.log("Login failed:", error);
+    }
+}
+
+userLogin();
+</script></body></html>

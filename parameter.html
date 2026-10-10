@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function calculateSum(...numbers) {
+    let sum = 0;
+
+    for (let i of numbers) {
+        sum = sum + i;
+    }
+    return sum;
+}
+
+console.log("Sum =", calculateSum(10, 20, 30));
+console.log("Sum =", calculateSum(5, 10, 15, 20, 25));
+</script></body></html>

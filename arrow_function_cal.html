@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let mark1 = 80;
+let mark2 = 75;
+let mark3 = 90;
+
+let tot= (a, b, c) => a + b + c;
+let avg1= (tot) => tot / 3;
+
+let total = tot(mark1, mark2, mark3);
+let average = avg1(total);
+let result = `
+Student Marks Report
+--------------------
+Subject 1 : ${mark1}
+Subject 2 : ${mark2}
+Subject 3 : ${mark3}
+Total     : ${total}
+Average   : ${average.toFixed(2)}
+`;
+console.log(result);
+</script></body></html>

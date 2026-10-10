@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+label {
+    display: inline-block;
+    width: 120px;
+    text-align: left;
+    margin-left: 20px;
+}form 
+  { 
+   width:550px; 
+   margin:30px auto; 
+   padding:20px;
+   border-style:solid; 
+   border-radius:8px; 
+   background-color:pink;
+   }
+input,select 
+{
+    margin-bottom:15px;
+}
+    
+
+   </style></head>
+<body>
+<form>
+<center>
+<h1>Student Registration Form</h1>
+<h6>Please fill the Following student Registration form</h6>
+<label>Roll Number</label>	<input type=text size=45  required><br>
+<label>Student Name:</label>	<input type="text" placeholder="first name" required>---<input type="text" placeholder="last name" required><br>
+
+<label>Fathers Name</label><input type="text" size=45><br>
+<label>Date of Birth</label><input type=text size=7 placeholder="day">-<input type=text size=7 placeholder="month">-<input type=text size=7 placeholder="year"><i>(DD-MM-YYYY)</i><br>
+
+<label>Mobile number</label><input type=text value=+91 size=3>-<input type=number><br>
+<label>Email address</label><input type=email><br>
+<label>Password</label><input type=password required minlength="8"><br>
+<label>Gender </label><input type=radio name=r1> Male <input type=radio name=r1>Female<br>
+<label>Departments </label>  CS <input type=checkbox name=c1> IT<input type=checkbox name=c2>ESE <input type=checkbox name=c3>civil <input type=checkbox name=c4>Mtech <input type=checkbox name=c5><br>
+<label>Course</label><select>
+           <option>.....select current course......</option>
+           <option> Computer Science</option>
+          <option>AI DS</option>
+           <option>AIML</option></select><br>
+
+
+</select>
+<label>Student photo</label><input type=file><br>
+<label>City </label><input type=text size=30><br>
+<label>Address</label><textarea rows=5 cols=20></textarea><br>
+<input type=submit value=register>
+
+
+</center></form></body></html>
