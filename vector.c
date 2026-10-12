@@ -6,7 +6,7 @@ void main(){
     char name[20][20];
     int start[20],end[20],files=0;
 
-    printf("Enter number of disk blocks: ");
+    printf("enter number of disk blocks: ");
     scanf("%d",&n);
 
     for(i=0;i<n;i++){
@@ -15,12 +15,12 @@ void main(){
     }
 
     do{
-        printf("1.Show Bit Vector\n");
-        printf("2.Create New File\n");
-        printf("3.Show Directory\n");
-        printf("4.Exit\n");
-        printf("Enter choice: ");
-        scanf("%d", &choice);
+        printf("1.show Bit Vector\n");
+        printf("2.create New File\n");
+        printf("3.show Directory\n");
+        printf("4.exit\n");
+        printf("enter choice: ");
+        scanf("%d",&choice);
         switch(choice){
             case 1:
                 printf("\nBit Vector:\n");
@@ -31,18 +31,18 @@ void main(){
 
             case 2:
                 if(files==20){
-                    printf("Directory is full!\n");
+                    printf("directory is full\n");
                     break;
                 }
 
-                printf("Enter file name: ");
-                scanf("%19s",name[files]);
+                printf("enter file name: ");
+                scanf("%s",name[files]);
 
-                printf("Enter number of blocks required: ");
+                printf("enter number of blocks required: ");
                 scanf("%d", &size);
 
                 if(size<=0||size>n){
-                    printf("Invalid file size!\n");
+                    printf("invalid file size\n");
                     break;
                 }
                 int freeCount = 0;
@@ -51,7 +51,7 @@ void main(){
                         freeCount++;
 
                 if (freeCount < size){
-                    printf("Not enough free blocks!\n");
+                    printf("not enough free blocks\n");
                     break;
                 }
 
@@ -72,11 +72,11 @@ void main(){
                 }
 
                 files++;
-                printf("File created successfully!\n");
+                printf("file created successfull\n");
                 break;
 
             case 3:
-                printf("\nFile Name\tStart\tBlock Chain\n");
+                printf("\nfile name\tstart\tblock chain\n");
                 for(i=0;i<files;i++){
                     int current = start[i];
                     printf("%s\t\t%d\t", name[i],current);
@@ -91,10 +91,10 @@ void main(){
                 }
                 break;
             case 4:
-                printf("Exiting program...\n");
+                printf("exit\n");
                 break;
             default:
-                printf("Invalid choice!\n");
+                printf("invalid choice\n");
         }
     } while(choice!=4);
 }
