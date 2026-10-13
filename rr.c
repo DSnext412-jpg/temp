@@ -9,7 +9,7 @@ void main()
     int gantt[200],g=0;
     int finished[20]={0};
 
-    printf("Enter No. of Processes: ");
+    printf("enter no. of Processes: ");
     scanf("%d", &n);
 
     printf("\nPID\tATime\tBTime\n");
@@ -19,14 +19,14 @@ void main()
         scanf("%d%d", &at[i],&bt[i]);
     }
 
-    printf("Enter Time Quantum: ");
+    printf("enter time quantum: ");
     scanf("%d",&tq);
 
     for(i=0;i<n;i++){
         bt[i]+=rand()%5+1;
         rem[i]=bt[i];
     }
-    printf("\nGantt Chart:\n");
+    printf("\ngantt chart:\n");
     while (done<n)
     {
         int found=0;
@@ -71,8 +71,8 @@ void main()
             sumTAT+=tat[i];
         }
 
-        printf("\nAverage Waiting Time=%.2f",
+        printf("\naverage WT=%.2f",
                (float)sumWT/n);
-        printf("\nAverage Turnaround Time=%.2f\n",
+        printf("\naverage TAT=%.2f\n",
                (float)sumTAT/n);
 }
