@@ -19,7 +19,7 @@ void main(){
         freq[i]=0;
     }
 
-    printf("\nPage\tFrames\t\tpage fault\n");
+    printf("\npage\tframes\t\tpage fault\n");
     for(i=0;i<n;i++){
         found=0;
         for(j=0;j<f;j++){
