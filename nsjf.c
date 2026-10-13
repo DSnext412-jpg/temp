@@ -28,7 +28,7 @@ void main(){
         
         if(p==-1){
             time++;
-            gantt_time[g_count+1 =time;
+            gantt_time[g_count+1]=time;
             continue;
         }
 
