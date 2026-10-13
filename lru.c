@@ -1,16 +1,15 @@
 #include<stdio.h>
 void main(){
-    int pages[50],frames[10],counter[10];
-    int n,f,i,j,found,pos,faults=0,time=0;
+    int pages[50],frames[10],counter[10],n,f,i,j,found,pos,faults=0,time=0;
 
-    printf("Enter number of pages: ");
-    scanf("%d", &n);
+    printf("enter number of pages: ");
+    scanf("%d",&n);
 
-    printf("Enter reference string:\n");
+    printf("enter reference string:\n");
     for(i=0;i<n;i++)
         scanf("%d",&pages[i]);
 
-    printf("Enter number of frames: ");
+    printf("enter number of frames: ");
     scanf("%d",&f);
 
     for(i=0;i<f;i++){
@@ -18,14 +17,14 @@ void main(){
         counter[i]=0;
     }
 
-    printf("\nPage\tFrames\t\tpage fault\n");
+    printf("\npage\tframes\t\tpage fault\n");
 
     for(i=0;i<n;i++){
         time++;
         found=0;
 
         for(j=0;j<f;j++){
-            if (frames[j]==pages[i]){
+            if(frames[j]==pages[i]){
                 counter[j]=time;
                 found=1;
                 break;
@@ -54,9 +53,7 @@ void main(){
             frames[pos]=pages[i];
             counter[pos]=time;
         }
-
-        printf("%d\t", pages[i]);
-
+        printf("%d\t",pages[i]);
         for(j=0;j<f;j++){
             if (frames[j]==-1)
                 printf("  ");
@@ -71,5 +68,5 @@ void main(){
             printf("\tY\n");
     }
 
-    printf("\nTotal Number of Page Faults =%d\n",faults);
+    printf("\ntotal number of page faults =%d\n",faults);
 }
