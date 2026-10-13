@@ -2,10 +2,8 @@
 #include<stdlib.h>
 
 void main(){
-    int n,i,time=0,count=0,p;
-    int at[20],bt[20],ct[20],tat[20],wt[20];
-    int done[20]={0};
-    int totalWT=0,totalTAT=0;
+    int n,i,time=0,count=0,p,totalWT=0,totalTAT=0;
+    int at[20],bt[20],ct[20],tat[20],wt[20],done[20]={0};
 
     printf("Enter No. of Processes: ");
     scanf("%d", &n);
@@ -18,9 +16,9 @@ void main(){
     }
 
     for(i=0;i<n;i++)
-        bt[i]+=rand() % 5 + 1;
+        bt[i]+=rand()%5+1;
 
-    printf("\nGantt Chart:\n");
+    printf("\ngantt chart:\n");
     while(count<n){
         p=-1;
         for(i=0;i<n;i++)
@@ -54,11 +52,10 @@ void main(){
         totalWT+=wt[i];
         totalTAT+=tat[i];
     }
-
-    printf("\nAverage Waiting Time = %.2f",
+    printf("\naverage waiting time=%.2f",
            (float)totalWT/n);
 
-    printf("\nAverage Turnaround Time = %.2f\n",
+    printf("\naverage turnaround time = %.2f\n",
            (float)totalTAT/n);
 
 }
