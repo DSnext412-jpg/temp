@@ -13,8 +13,6 @@ void main(){
     for(i=0;i<n;i++){
         printf("%d\t",i+1);
         scanf("%d%d%d",&at[i],&bt[i],&pr[i]);
-
-        bt[i]+=rand()%5+1;
         rem[i]=bt[i];
     }
 
