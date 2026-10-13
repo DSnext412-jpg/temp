@@ -1,19 +1,28 @@
-#include<stdio.h>
-#include<unistd.h>
-#include<sys/wait.h>
-#include<sys/resource.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
-void main(){
-    int pid=fork();
-    if (pid==0){
-        nice(-5);
+void main()
+{
+    pid_t pid;
+    pid = fork();
+    if (pid == 0)
+    {
+        nice(5);
+
         printf("Child Process\n");
-        printf("Child PID=%d\n",getpid());
-        printf("Nice value=%d\n",getpriority(PRIO_PROCESS,0));
+        printf("Child PID = %d\n", getpid());
+        printf("Child priority changed using nice()\n");
     }
-    else{
+    else if (pid > 0)
+    {
         wait(NULL);
+
         printf("Parent Process\n");
-        printf("Parent PID=%d\n",getpid());
+        printf("Parent PID = %d\n", getpid());
+    }
+    else
+    {
+        printf("Fork failed\n");
     }
 }
