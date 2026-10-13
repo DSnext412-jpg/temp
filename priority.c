@@ -2,14 +2,11 @@
 #include<stdlib.h>
 void main(){
     int n,i,time=0,done=0;
-    int at[10],bt[10],rem[10],pr[10];
-    int ct[10],tat[10],wt[10];
-    int gantt[100],start[100],end[100];
-    int count=0,p,high;
+    int at[10],bt[10],rem[10],pr[10],ct[10],tat[10],wt[10];
+    int gantt[100],start[100],end[100],count=0,p,high;
     float avgWT=0,avgTAT=0;
-
-    printf("Enter No. of Processes: ");
-    scanf("%d", &n);
+    printf("enter No. of processes: ");
+    scanf("%d",&n);
 
     printf("\nPID\tATime\tBTime\tPriority\n");
 
@@ -37,30 +34,30 @@ void main(){
             continue;
         }
 
-        if(count==0 || gantt[count - 1] != p){
-            gantt[count] = p;
-            start[count] = time;
+        if(count==0||gantt[count-1]!=p){
+            gantt[count]=p;
+            start[count]=time;
             count++;
         }
 
         rem[p]--;
         time++;
-        end[count - 1] = time;
+        end[count-1]=time;
 
         if (rem[p] ==0){
-            ct[p] = time;
+            ct[p]=time;
             done++;
         }
     }
 
-    printf("\nGantt Chart:\n");
+    printf("\ngantt chart:\n");
     for(i=0;i<count;i++)
-        printf("| P%d ", gantt[i] + 1);
+        printf("| P%d ",gantt[i]+1);
     printf("|\n");
 
-    printf("%d", start[0]);
+    printf("%d",start[0]);
     for(i=0;i<count;i++)
-        printf("\t%d", end[i]);
+        printf("\t%d",end[i]);
 
     printf("\n\nPID\tATime\tBTime\tPriority\tCTime\tTAT\tWT\n");
 
@@ -69,8 +66,8 @@ void main(){
         wt[i]=tat[i]-bt[i];
         avgWT+=wt[i];
         avgTAT+=tat[i];
-        printf("%d\t%d\t%d\t%d\t\t%d\t%d\t%d\n",i+1,at[i], bt[i],pr[i],ct[i],tat[i], wt[i]);
+        printf("%d\t%d\t%d\t%d\t\t%d\t%d\t%d\n",i+1,at[i],bt[i],pr[i],ct[i],tat[i], wt[i]);
     }
-    printf("\nAverage Waiting Time =%.2f", avgWT/n);
-    printf("\nAverage Turnaround Time =%.2f\n",avgTAT/n);
+    printf("\naverage WT=%.2f", avgWT/n);
+    printf("\naverage TAT=%.2f\n",avgTAT/n);
 }
